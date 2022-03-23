@@ -1,30 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="https://glitch.com/favicon.ico" />
 
     <title>Hello world!</title>
 
+    <!-- Better Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
 
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
-  </head>
-  <body>
-    <!-- this is the start of content -->
-    <h1>
-      Hello World!
-    </h1>
-    <p>
-      This starter gives you everything you need to start working on a new
-      website, and nothing more. If you're looking for something a little more
-      opinionated, try remixing
-      <a href="https://glitch.com/edit/#!/remix/glitch-hello-website"
-        >~glitch-hello-website</a
-      >.
-    </p>
-  </body>
+</head>
+
+<body>
+    <nav class="nav">
+        <img class="bulb" src="./assets/lightbulb.svg" alt="">
+        <h1>Light and Sound</h1>
+    </nav>
+    <div class="container">
+        <h1>The Memory Game</h1>
+        <br>
+        <button id="game-btn" class="pushable" type="button" onclick="gen()">
+            <span class="shadow"></span>
+            <span class="front">
+                <img class="zap" src="./assets/zap.svg" alt=""> Start
+            </span>
+        </button>
+        <br>
+        <div class="card-container" id="card-box"></div>
+        <footer class="footer">
+            <p>Made with lots of</p>
+            <p><img class="coffee" src="./assets/coffee.svg" /></p>
+        </footer>
+    </div>
+</body>
+
 </html>

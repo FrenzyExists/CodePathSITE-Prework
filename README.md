@@ -20,3 +20,21 @@ This is a basic static HTML starter project you can build on however you like. N
 
 - Need more help? [Check out our Help Center](https://help.glitch.com/) for answers to any common questions.
 - Ready to make it official? [Become a paid Glitch member](https://glitch.com/pricing) to boost your app with private sharing, more storage and memory, domains and more.
+
+
+
+
+# References
+
+Google Font
+https://fonts.google.com/specimen/Mali?query=Mali#standard-styles
+
+
+Shadows
+https://stackoverflow.com/questions/6088409/svg-drop-shadow-using-css3
+
+
+In the figma I made I realized I kinda messed up the scale, so I had to do everything with about halve its size, so something of 48px (3rem) in figma would have to be 24px (1.5rem).
+
+I used [this](https://nekocalc.com/px-to-rem-converter) to convert PX to REM because of [this](https://www.freecodecamp.org/news/what-is-rem-in-css/) article in freeCodeCamp:
+

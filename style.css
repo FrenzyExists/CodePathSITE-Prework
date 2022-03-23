@@ -1,25 +1,226 @@
 /* a minimalist set of CSS resets */
 
+/* Aquarium Colors Because my eyes are important */
+:root {
+    --bg: #313449;
+    --bar: #2C2E3E;
+    --btn: #3D4059;
+    --green: #B1DBA4;
+    --blue: #CDDBF9;
+    --fg: #C6D0E9;
+    --orange: #E8CCA7;
+    --yellow: #E6DFB8;
+    --red: #EBB9B9;
+    --shadow: #22292B6B;
+    --font: 'Mali';
+}
+
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
 /* default to border-box */
-html {
-  box-sizing: border-box;
-  font-size: 16px;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-/* adjust typography defaults */
-body {
-  margin: 1rem;
-  font-family: sans-serif;
-  line-height: 1.5;
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
 }
 
 /* images and videos max out at full width */
 img,
 video {
-  height: auto;
-  max-width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+
+/* Actual CSS thing */
+.nav,
+.footer {
+    background-color: var(--bar)
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+}
+
+.bulb {
+    /* scale: 0.7; */
+    width: 5vh;
+    margin-right: 0.2vh;
+    margin-left: 0.4vh;
+}
+
+body {
+    line-height: 1.5;
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p {
+    text-align: center;
+    letter-spacing: 0.07rem;
+    /* font-size: 1.5rem; */
+    font-size: 2.5vh;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+}
+
+.coffee {
+    /* scale: 0.7; */
+    width: 4vh;
+    margin: 1vh;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+.nav h1 {
+    font-weight: 500;
+    font-size: 4vh;
+    /* font-size: 3rem; */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container h1 {
+    text-align: center;
+    font-style: italic;
+    font-size: 4vh;
+    margin: 1.125rem;
+}
+
+
+.card-container {
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-container div {
+    padding: 1.125rem;
+    min-width: 11rem;
+    width: 13vw;
+    display: inline-block;
+    transition: 175ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-container div img {
+    filter: drop-shadow(2px 8px 2px var(--shadow));
+
+}
+
+.front,
+.pushable {
+    background: var(--btn);
+}
+
+/* Generate Button thingy - Comeau's 3d button*/
+
+.pushable {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    margin: auto;
+}
+
+.zap {
+    width: 6vh;
+}
+
+.pushable:hover .front {
+    transform: translateY(-11px);
+    transition:
+        transform 250ms cubic-bezier(.23, .7, .4, 1.75);
+}
+
+.pushable:active .front {
+    transform: translateY(-20px);
+    transition: transform 124ms;
+}
+
+.pushable {
+    background: var(--bar);
+    border: none;
+    border-radius: 14px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font);
+    color: var(--fg);
+    font-weight: 700;
+    padding: 1.125rem 2.625rem;
+    border-radius: 14px;
+    /* font-size: 2rem; */
+    font-size: 3vh;
+    transform: translateY(-9px);
+    transition:
+        transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.pushable:active .front {
+    transform: translateY(-2px);
+}
+
+.pushable:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    background: var(--shadow);
+    transform: translateY(3px);
+    will-change: transform;
+    transition:
+        transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+br {
+    margin: 3%;
+}
+
+
+
+.card-container div:hover {
+    transform: scale(1.1);
 }
