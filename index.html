@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <link rel="icon" href="./assets/lightbulb.svg" />
 
-    <title>Hello world!</title>
+    <title>Memory Game</title>
 
     <!-- Better Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,14 +24,16 @@
     <nav class="nav">
         <img class="bulb" src="./assets/lightbulb.svg" alt="">
         <h1>Light and Sound</h1>
+        <p>Normal</p>
     </nav>
     <div class="container">
         <h1>The Memory Game</h1>
         <br>
-        <button id="game-btn" class="pushable" type="button" onclick="gen()">
+        <button id="game-btn" class="pushable" type="button" onclick="GameButtonEvents(this)">
             <span class="shadow"></span>
             <span class="front">
-                <img class="zap" src="./assets/zap.svg" alt=""> Start
+                <img class="zap" src="./assets/zap.svg" alt="">
+                <p>Start</p>
             </span>
         </button>
         <br>

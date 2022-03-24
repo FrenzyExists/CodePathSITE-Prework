@@ -129,12 +129,13 @@ h1 {
     min-width: 11rem;
     width: 13vw;
     display: inline-block;
-    transition: 175ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    user-select: none;
+
 }
 
 .card-container div img {
     filter: drop-shadow(2px 8px 2px var(--shadow));
-
+    transition: 175ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .front,
@@ -155,7 +156,7 @@ h1 {
 }
 
 .zap {
-    width: 6vh;
+    width: 4vh;
 }
 
 .pushable:hover .front {
@@ -184,13 +185,17 @@ h1 {
     font-family: var(--font);
     color: var(--fg);
     font-weight: 700;
+    width: 26vh;
     padding: 1.125rem 2.625rem;
     border-radius: 14px;
-    /* font-size: 2rem; */
-    font-size: 3vh;
     transform: translateY(-9px);
     transition:
         transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.front p {
+    font-size: 3vh;
+    margin-left: 1vh;
 }
 
 .pushable:active .front {
@@ -220,7 +225,21 @@ br {
 }
 
 
-
-.card-container div:hover {
+.card-container div img:hover {
     transform: scale(1.1);
+}
+
+
+.card-container div img:active {
+    transform: scale(0.9);
+}
+
+.card-container div.lit img {
+    transform: scale(1.1);
+    transition:
+        transform 200ms ease-in-out;
+}
+
+.card-container div.playing-sequence {
+    pointer-events: none;
 }
