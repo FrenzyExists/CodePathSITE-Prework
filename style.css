@@ -243,3 +243,18 @@ br {
 .card-container div.playing-sequence {
     pointer-events: none;
 }
+
+#difficulty {
+    position: absolute;
+    right: 2vw;
+    background: rgba(0, 0, 0, 0.13);
+    padding: 0.725rem 2.625rem;
+    border-radius: 14px;
+    transition:
+        transform 200ms ease-in-out;
+}
+
+#difficulty:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}

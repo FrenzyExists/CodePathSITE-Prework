@@ -14,9 +14,11 @@ let guessCounter = 0;
 let strikes = 0; // number of strikes, if it reaches 0 its game over
 let volume = 0.3; // default is 0.5, set to 0.3 if ears are bleeding
 let tonePlaying = false;
+let difficultyBool = true;
 let gamePlaying = false;
 let freqMap = {};
 freqMap['game'] = 450.76
+freqMap['diff'] = 520.76
 const generateFrequencyMap = (mapLength, start, dx) => {
     for (i = 0; i < mapLength; i++) {
         freqMap[i + 1] = start + i * dx;
@@ -98,6 +100,23 @@ const playClueSequence = () => {
     setTimeout(enableButtons, delay, 'card-box') // Make sure that Player can't mess up the game when the sequence is playing due to impatience
 }
 
+const changeDifficulty = (btn) => {
+    console.log(btn.innerText)
+    playTone('diff', clueHoldTime / 10);
+    console.log(document.getElementById('game-btn').childNodes[3].childNodes[3].innerText)
+    if (document.getElementById('game-btn').childNodes[3].childNodes[3].innerText === 'Stop') {
+        document.getElementById('game-btn').childNodes[3].childNodes[3].innerText = 'Start'
+        stopGame();
+    }
+    if (btn.innerText === "Normal") {
+        difficultyBool = false;
+        btn.innerText = "Hard"
+    } else if (btn.innerText === "Hard") {
+        difficultyBool = true;
+        btn.innerText = "Normal"
+    }
+}
+
 const difficulty = (level) => {
     pattern = []; // clear from mem
     if (level === true) { // normal difficulty
@@ -119,7 +138,7 @@ const generateBlocks = (num_of_cards, blockList) => {
         let img = document.createElement('img');
         img.src = blockList[i - 1];
         card_wrapper.appendChild(img);
-        img.addEventListener('click', () => {
+        card_wrapper.addEventListener('click', () => {
             guess(card_wrapper.id)
         });
         img.addEventListener('mousedown', () => {
@@ -142,7 +161,7 @@ const startGame = () => {
     guessCounter = 0;
     strikes = 0;
     gamePlaying = true;
-    difficulty(true); // Setting normal difficulty as default
+    difficulty(difficultyBool); // Setting normal difficulty as default
     enableButtons('card-box');
     playClueSequence()
 }
@@ -184,8 +203,8 @@ const guess = (btn) => {
     if (!gamePlaying) {
         return;
     }
-
-    // console.log("Current Progress: " + progress);
+    console.log("Current Progress: " + progress);
+    console.log("guessCounter Progress: " + guessCounter);
     console.log("Player guessed: " + btn);
     if (pattern[guessCounter] == btn) {
         if (guessCounter == progress) {
@@ -195,7 +214,6 @@ const guess = (btn) => {
                 progress++;
                 guessCounter = 0;
                 playClueSequence()
-
             }
         } else {
             guessCounter++;
@@ -208,10 +226,10 @@ const guess = (btn) => {
             strikes++;
             playClueSequence()
         }
+        guessCounter = 0;
+
     }
 }
-
-
 
 
 // Page Initialization
@@ -221,7 +239,6 @@ const main = () => {
     g.gain.setValueAtTime(0, context.currentTime)
     o.connect(g)
     o.start(0)
-
     generateFrequencyMap(blockList.length, 191, 46.75); // Yield frequencies
     generateBlocks(blockList.length, blockList); // Create blocks dinamically
 }
