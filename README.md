@@ -39,10 +39,27 @@ The following **additional** features are implemented:
 ## Video Walkthrough (GIF)
 
 If you recorded multiple GIFs for all the implemented features, you can add them here:
-![](gif1-link-here)
-![](gif2-link-here)
-![](gif3-link-here)
-![](gif4-link-here)
+
+### Preview
+
+![](./Documentation/prev_1.gif)
+
+
+### Win
+
+![](./Documentation/win.gif)
+
+### Lose
+
+![](./Documentation/lost.gif)
+
+### Stop Game
+
+![](./Documentation/stop.gif)
+
+### Change Difficulty
+
+![](./Documentation/difficulty.gif)
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
@@ -63,9 +80,6 @@ If you recorded multiple GIFs for all the implemented features, you can add them
 
         * Figma Design
             https://www.figma.com/file/O27Ohl2beM1OmVWj20oZpV/Memory-Concept-Figma?node-id=0%3A1
-
-        * GIF Recording Software (Peek)
-            https://github.com/phw/peek
         
         * Word Counter
             https://wordcounter.net/
