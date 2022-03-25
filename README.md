@@ -6,7 +6,7 @@ Submitted by: **Angel García (Detective Pikachu)**
 
 Time spent: **14** hours spent in total
 
-Link to project: (insert your link here, should start with https://glitch.com...)
+Link to project: https://glitch.com/edit/#!/memory-app-game-thing
 
 ## Required Functionality
 
