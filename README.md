@@ -6,7 +6,7 @@ Submitted by: **Angel García (Detective Pikachu)**
 
 Time spent: **14** hours spent in total
 
-Link to project: https://github.com/FrenzyExists/CodePathSITE-Prework
+Link to project: https://code-path-memory-app-game.glitch.me
 
 ## Required Functionality
 
