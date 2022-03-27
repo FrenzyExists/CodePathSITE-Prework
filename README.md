@@ -92,6 +92,9 @@ If you recorded multiple GIFs for all the implemented features, you can add them
 
         * MDN Documentation
             https://developer.mozilla.org/en-US/docs/Web
+            
+        * Kapwing (Video Editing, GIF editing)
+            https://www.kapwing.com
 
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
@@ -111,8 +114,7 @@ I would do start working on the optional features I couldn't work on, such as th
 
 ## Interview Recording URL Link
 
-[My 5-minute Interview Recording](your-link-here)
-
+[My 5-minute Interview Recording](https://www.kapwing.com/videos/623fc6670f77e600a0a84665)
 
 ## License
 
